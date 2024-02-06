@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz@1,6..12&display=swap');
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+}
+
+.titolo{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.contenitore{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+
+svg{
+    width: 53px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+header .iconacarrello{
+    position: relative;
+}
+
+header .iconacarrello span{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+}
+.listProduct .item img{
+width: 90%;
+filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.listProduct .item{
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+
+.listProduct .item .prezzo{
+    letter-spacing: 7px;
+    font-size: small;
+}
+
+.listProduct .item button{
+    background-color: #353432;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.carrello{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+
+body.showcart .carrello{
+    inset: 0 0 0 auto;
+}
+
+body.showcart .contenitore{
+    transform: translateX(-250px);
+}
+
+.carrello h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.carrello .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.carrello .btn button{
+    background-color: rgb(255, 255, 0);
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.carrello .btn .chiudi{
+    background-color: #eee;
+
+}
+
+.carrello .listaCarrello .item img{
+    width: 100%;
+}
+
+.carrello .listaCarrello .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.listaCarrello .quantita span{
+    display: inline block;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listaCarrello .quantita span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+
+.listaCarrello .item:nth-child(even){
+    background-color: #eee1;
+
+}
+.listaCarrello{
+    overflow: auto;
+}
+
+.listaCarrello::-webkit-scrollbar{
+    width: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
